@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types';
 
-// import {
-//   ProfileBox,
-//   Description,
-//   UserAvatar,
-//   Name,
-//   Tag,
-//   Location,
-//   Stats,
-//   StatsItem,
-//   Label,
-//   Quantity,
-// } from './Profile.styled';
+import {
+  ProfileBox,
+  DescriptionBox,
+  Avatar,
+  Name,
+  Tag,
+  Location,
+  Stats,
+  StatsItem,
+  Label,
+  Quantity,
+} from './Profile.styled';
 
 export const Profile = ({
   avatar,
@@ -21,29 +21,29 @@ export const Profile = ({
   stats: { followers, views, likes },
 }) => {
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={avatar} alt={username} class="avatar" />
-        <p class="name">Petra Marica</p>
-        <p class="tag">{tag}</p>
-        <p class="location">{location}</p>
-      </div>
+    <ProfileBox className="profile">
+      <DescriptionBox className="description">
+        <Avatar src={avatar} alt={username} className="avatar" />
+        <Name>Petra Marica</Name>
+        <Tag>@{tag}</Tag>
+        <Location>{location}</Location>
+      </DescriptionBox>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{followers}</span>
-        </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{views}</span>
-        </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{likes}</span>
-        </li>
-      </ul>
-    </div>
+      <Stats>
+        <StatsItem>
+          <Label className="label">Followers</Label>
+          <Quantity className="quantity">{followers}</Quantity>
+        </StatsItem>
+        <StatsItem>
+          <Label className="label">Views</Label>
+          <Quantity className="quantity">{views}</Quantity>
+        </StatsItem>
+        <StatsItem>
+          <Label className="label">Likes</Label>
+          <Quantity className="quantity">{likes}</Quantity>
+        </StatsItem>
+      </Stats>
+    </ProfileBox>
   );
 };
 
