@@ -17,6 +17,7 @@ export const App = () => {
         alignItems: 'center',
         fontSize: 40,
         color: '#010101',
+        flexDirection: 'column',
       }}
     >
       <Profile
